@@ -21,7 +21,7 @@ def ejecutar():
         delayed(lambda nombre, fn: (nombre, fn()))(nombre, fn) for nombre, fn in tareas
     )
 
-    # Contraste descriptivo/estadístico entre plantas para DBO de salida.
+    # Comparación descriptivo/estadístico entre plantas para DBO de salida.
     grupos = [g["DBO_salida_mg_L"].values for _, g in df.groupby("planta")]
     anova = stats.f_oneway(*grupos)
 
